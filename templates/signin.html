@@ -1,0 +1,10 @@
+
+{% if request.user.is_authenticated %}
+<p>Hello {{ request.user.username }}, Email: {{ request.user.email }}</p>
+{% endif %}
+
+<a href="https://www.facebook.com/v19.0/dialog/oauth?client_id={{ FACEBOOK_APP_ID}}&redirect_uri={{FACEBOOK_REDIRECT_URL}}&scope=email+public_profile"><button>Signin with Facebook</button></a>
+<a href="https://accounts.google.com/o/oauth2/v2/auth?scope=openid+profile+email&include_granted_scopes=true&response_type=token&state=state_parameter_passthrough_value&redirect_uri={{ GOOGLE_REDIRECT_URL }}&client_id={{ GOOGLE_CLIENT_ID }}"><button>Signin with Google</button></a>
+<a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id={{ LINKEDIN_CLIENT_ID }}&redirect_uri={{ LINKEDIN_REDIRECT_URL }}&scope=openid+profile+email"><button>Signin with Linkedin</button></a>
+<a href="https://github.com/login/oauth/authorize?scope=user,user:email&client_id={{ GITHUB_CLIENT_ID }}"><button>Signin with Github</button></a>
+<a href="{% url 'userurl:logout' %}"><button>Logout</button></a>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var fragment = window.location.hash.substr(1);            
+            var fragmentParams = fragment.split('&');
+            var keyValue = fragmentParams[1].split('=');
+            var key = keyValue[0];
+            var value = keyValue[1];
+            console.log(value)
+            window.location.href = `/google?access_token=${value}`;
+        </script>
+    </body>
+</html>
