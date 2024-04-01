@@ -1,4 +1,4 @@
-# Django social auth
+# Django social authentication
 
 ## Introduction
 Social media authentication is an added advantage to your web application because your users do not have to go through the hassle of filling forms in creating account by inputting their username, email, passwords etc. 
